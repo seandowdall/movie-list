@@ -8,12 +8,20 @@ export class MovieService {
   constructor() { }
 
   movieList = [
-    { id: 1, title: 'Spiderman', year : '2002', director: 'Sam Raini' },
-    { id: 2, title: 'Student No: s00210945', year : '2022', director: 'Sean Dowdall' },
-    { id: 3, title: 'Pulp Fiction', year : '1994', director: 'Quentin Tarantino' },
+    { title: 'Spiderman', year : '2002', director: 'Sam Raini' },
+    { title: 'Student No: s00210945', year : '2022', director: 'Sean Dowdall' },
+    { title: 'Pulp Fiction', year : '1994', director: 'Quentin Tarantino' },
   ];
 
   getMovies() {
     return this.movieList;
+  }
+
+  addMovie(movietitle:string, moviedirector:string , movieyear:string) {
+    this.movieList.push({title:movietitle, director:moviedirector, year:movieyear});
+  }
+
+  ngOnInit(){
+    
   }
 }
