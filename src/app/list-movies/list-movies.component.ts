@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { MovieService } from '../movie.service';
-import { Movie } from "../movie.model";
+import { Movie } from "src/movie.model";
 import { ThisReceiver } from '@angular/compiler';
 import { animationFrameScheduler } from 'rxjs';
 
@@ -13,7 +13,7 @@ import { animationFrameScheduler } from 'rxjs';
 export class ListMoviesComponent implements OnInit {
 
   movies=[] as any;
-  private currentMovie:Movie;
+  private currentMovie!:Movie;
 
   @Output() onSelectedMovie: EventEmitter<Movie>;
 

@@ -12,6 +12,7 @@ export class AddMovieComponent {
 
   addNewMovie(movietitle:HTMLInputElement, moviedirector: HTMLInputElement, movieyear:HTMLInputElement):boolean {
     this.movieService.addMovie(movietitle.value, moviedirector.value, movieyear.value);
+    console.log(movietitle.value);
     return false;
   }
 

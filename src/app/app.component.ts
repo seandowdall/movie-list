@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MovieService } from './movie.service';
+import { Movie} from 'src/movie.model';
 
 
 @Component({
@@ -8,13 +8,11 @@ import { MovieService } from './movie.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  movies=[] as any;
+  public mySelectedMovie!: Movie;
 
-  constructor(private movieService: MovieService) {}
-
-  ngOnInit() {
-    this.movies = this.movieService.getMovies();
-    console.log(this.movies);
+  setSelectedMovie(movie:Movie) {
+    this.mySelectedMovie = movie;
   }
+ 
 
 }
