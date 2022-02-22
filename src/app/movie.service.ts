@@ -1,24 +1,29 @@
 import { Injectable } from '@angular/core';
+import { Movie } from "./movie.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
+  movie: Movie;
+
   constructor() { }
 
   movieList = [
-    { title: 'Spiderman', year : '2002', director: 'Sam Raini' },
-    { title: 'Student No: s00210945', year : '2022', director: 'Sean Dowdall' },
-    { title: 'Pulp Fiction', year : '1994', director: 'Quentin Tarantino' },
+    new Movie('The Godfather', '1972', 'Francis Ford Coppola'),
+    new Movie('Millers Crossing', '1990', 'The Coen Brothers'),
+    new Movie('Dial M for Murder', '1954', 'Alfred Hitchcock'),
+    new Movie('Sean Dowdall', '2022', 's00210945')
+   
   ];
 
   getMovies() {
     return this.movieList;
   }
 
-  addMovie(movietitle:string, moviedirector:string , movieyear:string) {
-    this.movieList.push({title:movietitle, director:moviedirector, year:movieyear});
+  addMovie(movietitle:string, moviedirector:string , movieyear:string, ) {
+    this.movieList.push(new Movie(movietitle, movieyear, moviedirector));
   }
 
   ngOnInit(){
